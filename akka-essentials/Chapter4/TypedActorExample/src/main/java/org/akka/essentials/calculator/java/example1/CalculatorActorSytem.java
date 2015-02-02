@@ -1,0 +1,54 @@
+package org.akka.essentials.calculator.java.example1;
+
+import org.akka.essentials.calculator.java.Calculator;
+import org.akka.essentials.calculator.java.CalculatorInt;
+
+import akka.actor.ActorRef;
+import akka.actor.ActorSystem;
+import akka.actor.TypedActor;
+import akka.actor.TypedProps;
+import akka.japi.Option;
+import akka.util.Timeout;
+import scala.concurrent.Await;
+import scala.concurrent.Future;
+import scala.concurrent.duration.Duration;
+
+import java.util.concurrent.TimeUnit;
+
+public class CalculatorActorSytem {
+
+    public static void main(String[] args) throws Exception {
+        ActorSystem _system = ActorSystem.create("TypedActorsExample");
+
+        Timeout timeout = new Timeout(Duration.create(5, TimeUnit.SECONDS));
+
+        CalculatorInt calculator = TypedActor.get(_system).typedActorOf(
+                new TypedProps<Calculator>(CalculatorInt.class,
+                        Calculator.class));
+
+        // calling a fire and forget method
+        calculator.incrementCount();
+
+        // Invoke the method and wait for result
+        Future<Integer> future = calculator.add(Integer.valueOf(14),
+                Integer.valueOf(6));
+        Integer result = Await.result(future, timeout.duration());
+
+        System.out.println("Result is " + result);
+
+        Option<Integer> counterResult = calculator.incrementAndReturn();
+        System.out.println("Result is " + counterResult.get());
+
+        counterResult = calculator.incrementAndReturn();
+        System.out.println("Result is " + counterResult.get());
+
+        // Get access to the ActorRef
+        ActorRef calActor = TypedActor.get(_system).getActorRefFor(calculator);
+        // call actor with a message
+        calActor.tell("Hi there", ActorRef.noSender());
+
+        _system.shutdown();
+
+    }
+
+}
