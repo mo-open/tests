@@ -1,9 +1,10 @@
 package org.akka.essentials.dispatcher.example.BalancingDispatcher
+
 import akka.actor.ActorSystem
 import com.typesafe.config.ConfigFactory
 import akka.actor.Props
-import org.akka.essentials.dispatcher.MsgEchoActor
 import akka.routing.RoundRobinRouter
+import org.akka.essentials.dispatcher.MsgEchoActor
 
 object Example2 {
 	def main(args: Array[String]): Unit = {}

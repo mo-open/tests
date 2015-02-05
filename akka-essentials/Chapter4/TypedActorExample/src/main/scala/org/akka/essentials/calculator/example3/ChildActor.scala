@@ -1,7 +1,7 @@
 package org.akka.essentials.calculator.example3
+
 import akka.actor.actorRef2Scala
 import akka.actor.Actor
-import akka.event.Logging
 import akka.actor.ActorLogging
 
 class ChildActor extends Actor with ActorLogging {

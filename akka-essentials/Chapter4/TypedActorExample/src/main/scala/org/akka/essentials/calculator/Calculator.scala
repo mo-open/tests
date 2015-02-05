@@ -1,17 +1,12 @@
 package org.akka.essentials.calculator
-import akka.dispatch.Future
-import akka.dispatch.Promise
+
 import akka.actor.TypedActor
 import akka.actor.ActorRef
-import akka.actor.SupervisorStrategy
-import akka.actor.OneForOneStrategy
-import akka.util.duration._
-import akka.actor.SupervisorStrategy._
-import akka.actor.ActorLogging
 import akka.event.Logging
 import akka.actor.TypedActor.PreStart
-import akka.actor.TypedActor.Supervisor
 import akka.actor.TypedActor.PostStop
+import scala.concurrent.{Promise, Future}
+import akka.dispatch.Futures
 
 class Calculator extends CalculatorInt with PreStart with PostStop {
 
@@ -22,9 +17,9 @@ class Calculator extends CalculatorInt with PreStart with PostStop {
   import TypedActor.dispatcher
 
   //Non blocking request response
-  def add(first: Int, second: Int): Future[Int] = Promise successful first + second
+  def add(first: Int, second: Int): Future[Int] = Futures successful first + second
   //Non blocking request response
-  def subtract(first: Int, second: Int): Future[Int] = Promise successful first - second
+  def subtract(first: Int, second: Int): Future[Int] = Futures successful first - second
   //fire and forget
   def incrementCount(): Unit = counter += 1
   //Blocking request response

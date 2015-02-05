@@ -1,19 +1,24 @@
 package org.akka.essentials.dispatcher.example.Dispatcher
+
 import akka.actor.ActorSystem
 import com.typesafe.config.ConfigFactory
 import akka.actor.Props
-import org.akka.essentials.dispatcher.MsgEchoActor
 import akka.routing.RoundRobinRouter
+import org.akka.essentials.dispatcher.MsgEchoActor
 
 object Example1 {
-	def main(args: Array[String]): Unit = {}
-	val _system = ActorSystem.create("default-dispatcher",ConfigFactory.load().getConfig("MyDispatcherExample"))
+    def main(args: Array[String]): Unit = {}
 
-	val actor = _system.actorOf(Props[MsgEchoActor].withDispatcher("defaultDispatcher").withRouter(
-						RoundRobinRouter(5)))
+    val _system = ActorSystem.create("default-dispatcher",
+        ConfigFactory.load().getConfig("MyDispatcherExample"))
 
-	0 to 25 foreach {
-		i => actor ! i
-	}
-	_system.shutdown()
+    val actor = _system.actorOf(Props[MsgEchoActor]
+        .withDispatcher("defaultDispatcher")
+        .withRouter(RoundRobinRouter(5))
+    )
+
+    0 to 25 foreach {
+        i => actor ! i
+    }
+    _system.shutdown()
 }

@@ -11,6 +11,7 @@ import akka.actor.OneForOneStrategy
 import akka.dispatch.Future
 import akka.actor.SupervisorStrategy._
 import akka.actor.ActorRef
+import scala.concurrent.Await
 
 case class Result
 
