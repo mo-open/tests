@@ -1,0 +1,25 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>akka.essentials</groupId>
+    <artifactId>parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>Akka Essentials Parent</name>
+    <modules>
+        <module>Chapter2/FirstAkkaApplication</module>
+        <module>Chapter3/ActorMessagingExample</module>
+        <module>Chapter4/TypedActorExample</module>
+        <module>Chapter5/AkkaDispatcherExample</module>
+        <module>Chapter5/AkkaRouterExample</module>
+        <module>Chapter6/AkkaSupervisorExample</module>
+        <module>Chapter7/AkkaSTMExample</module>
+        <module>Chapter8/AkkaCustomExtension</module>
+        <module>Chapter8/AkkaUnitTest</module>
+        <module>Chapter9/AkkaRemotingExample/LocalNodeApp</module>
+        <module>Chapter9/AkkaRemotingExample/RemoteNodeApp</module>
+        <module>Chapter9/AkkaSerializerExample</module>
+    </modules>
+</project>
