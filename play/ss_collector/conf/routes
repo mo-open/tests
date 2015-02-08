@@ -1,0 +1,10 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+POST        /json        com.thistech.ss.collector.controllers.CapCollector.publishCapJson
+POST        /xml         com.thistech.ss.collector.controllers.CapCollector.publishCapXml
+
+
+    
