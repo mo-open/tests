@@ -4,6 +4,8 @@ version       := "0.4"
 
 scalaVersion  := "2.11.5"
 
+resolvers += "Scalaz Bintray Repo" at "http://dl.bintray.com/scalaz/releases"
+
 libraryDependencies ++= {
   val akkaV  = "2.3.9"
   val sprayV = "1.3.2"
@@ -28,7 +30,7 @@ libraryDependencies ++= {
     "io.spray"            %%  "spray-testkit"         % sprayV   % "test" withSources() withJavadoc,
     "org.scalatest"       %%  "scalatest"             % "2.2.3"  % "test",
     "junit"               %   "junit"                 % "4.12"   % "test",
-    "org.specs2"          %%  "specs2"                % "2.4.15" % "test",
+    "org.specs2"          %%  "specs2"                % "2.4.16-scalaz-7.0.6" % "test",
     "ch.qos.logback"      %   "logback-classic"       % "1.1.2"
   )
 }

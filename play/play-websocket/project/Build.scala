@@ -4,11 +4,11 @@ import play.Project._
 
 object ApplicationBuild extends Build {
 
-  val appName         = "websocket_example"
+  val appName         = "play_websocket"
   val appVersion      = "1.1"
 
   val appDependencies = Seq(
-    "websocket_plugin" % "websocket_plugin_2.10" % "0.4.0"
+    "websocket_plugin" % "websocket_plugin_2.10" % "0.4.0" withSources()
   )
 
 
@@ -17,5 +17,4 @@ object ApplicationBuild extends Build {
       resolvers += Resolver.url("TPTeam Repository", url("http://tpteam.github.io/snapshots/"))(Resolver.ivyStylePatterns)
 
   )
-
 }
