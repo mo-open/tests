@@ -5,7 +5,8 @@ import org.json4s._
 import java.util.UUID
 
 object Json4sSupport extends Json4sJacksonSupport {
-   implicit def json4sJacksonFormats: Formats = jackson.Serialization.formats(NoTypeHints) + new UUIDFormat
+   implicit def json4sJacksonFormats: Formats =
+       jackson.Serialization.formats(NoTypeHints) + new UUIDFormat
 
   //so you don't need to import
   //jackson everywhere
