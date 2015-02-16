@@ -1,0 +1,2 @@
+set CLASSPATH=.
+nohup java -server -Xmx6G -Xms6G -Xmn2G -XX:+DisableExplicitGC -XX:SurvivorRatio=1 -XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled -XX:+UseCMSCompactAtFullCollection -XX:CMSMaxAbortablePrecleanTime=500 -XX:CMSPermGenSweepingEnabled -XX:+CMSClassUnloadingEnabled -XX:+PrintClassHistogram -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintHeapAtGC -Xloggc:gc.log -Djava.ext.dirs=lib com.test.server.HttpChunkedServer 8000 >server.out 2>&1 &
