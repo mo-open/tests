@@ -6,24 +6,24 @@ import akka.actor.ActorRef;
 import akka.actor.UntypedActor;
 
 public class SequencingActor extends UntypedActor {
-	ActorRef next;
-	List<Integer> head;
-	List<Integer> tail;
+    ActorRef next;
+    List<Integer> head;
+    List<Integer> tail;
 
-	public SequencingActor(ActorRef next, List<Integer> head, List<Integer> tail) {
-		this.next = next;
-		this.head = head;
-		this.tail = tail;
-	}
+    public SequencingActor(ActorRef next, List<Integer> head, List<Integer> tail) {
+        this.next = next;
+        this.head = head;
+        this.tail = tail;
+    }
 
-	@Override
-	public void onReceive(Object message) throws Exception {
-		for (Integer value : head) {
-			sender().tell(value);
-		}
-		sender().tell(message);
-		for (Integer value : tail) {
-			sender().tell(value);
-		}
-	}
+    @Override
+    public void onReceive(Object message) throws Exception {
+        for (Integer value : head) {
+            sender().tell(value, ActorRef.noSender());
+        }
+        sender().tell(message, ActorRef.noSender());
+        for (Integer value : tail) {
+            sender().tell(value, ActorRef.noSender());
+        }
+    }
 }

@@ -21,5 +21,7 @@
         <module>Chapter9/AkkaRemotingExample/LocalNodeApp</module>
         <module>Chapter9/AkkaRemotingExample/RemoteNodeApp</module>
         <module>Chapter9/AkkaSerializerExample</module>
+        <module>Chapter11/AkkaWithZeroMQ</module>
+        <module>Chapter11/DurableMailBox</module>
     </modules>
 </project>

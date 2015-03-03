@@ -1,33 +1,33 @@
 package org.akka.essentials.supervisor.example1
+
 import akka.actor.Actor
 import akka.actor.ActorLogging
 import akka.actor.Props
-import akka.dispatch.Future
-import akka.pattern.ask
-import akka.util.Timeout
-import akka.dispatch.Await
+
+import scala.concurrent.duration._
+import scala.language.postfixOps
 
 class SupervisorActor extends Actor with ActorLogging {
-  import akka.actor.OneForOneStrategy
-  import akka.actor.SupervisorStrategy._
-  import akka.util.duration._
-  import org.akka.essentials.supervisor.example1.Result
 
-  val childActor = context.actorOf(Props[WorkerActor], name = "workerActor")
+    import akka.actor.OneForOneStrategy
+    import akka.actor.SupervisorStrategy._
 
-  override val supervisorStrategy = OneForOneStrategy(maxNrOfRetries = 10, withinTimeRange = 10 seconds) {
+    val childActor = context.actorOf(Props[WorkerActor], name = "workerActor")
 
-    case _: ArithmeticException => Resume
-    case _: NullPointerException => Restart
-    case _: IllegalArgumentException => Stop
-    case _: Exception => Escalate
-  }
+    override val supervisorStrategy = OneForOneStrategy(maxNrOfRetries = 10,
+        withinTimeRange = Duration(10, SECONDS)) {
 
-  def receive = {
-    case result: Result =>
-      childActor.tell(result, sender)
-    case msg: Object =>
-      childActor ! msg
+        case _: ArithmeticException => Resume
+        case _: NullPointerException => Restart
+        case _: IllegalArgumentException => Stop
+        case _: Exception => Escalate
+    }
 
-  }
+    def receive = {
+        case result: Result =>
+            childActor.tell(result, sender)
+        case msg: Object =>
+            childActor ! msg
+
+    }
 }

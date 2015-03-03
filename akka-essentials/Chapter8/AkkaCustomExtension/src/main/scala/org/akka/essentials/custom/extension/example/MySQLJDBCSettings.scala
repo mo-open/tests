@@ -1,4 +1,5 @@
 package org.akka.essentials.custom.extension.example
+
 import akka.actor.ExtensionIdProvider
 import akka.actor.ExtensionId
 import akka.actor.ExtendedActorSystem

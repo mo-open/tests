@@ -1,11 +1,8 @@
 package org.akka.essentials.stm.transactor.example
 import akka.actor.ActorSystem
 import akka.actor.Props
-import akka.dispatch.Future
-import akka.pattern.ask
 import akka.util.Timeout
-import akka.util.duration._
-import akka.dispatch.Await
+import scala.concurrent.duration._
 import java.lang.Float
 
 case class AccountBalance(accountNumber: String, accountBalance: Float)
@@ -21,19 +18,19 @@ object BankApplication {
   def main(args: Array[String]): Unit = {
 
     showBalances
-    bank ! new TransferMsg(1500)
+    bank ! new TransferMsg(1500f)
     showBalances
-    bank ! new TransferMsg(1400)
+    bank ! new TransferMsg(1400f)
     showBalances
-    bank ! new TransferMsg(3500)
+    bank ! new TransferMsg(3500f)
     showBalances
 
     system.shutdown
   }
   def showBalances(): Unit = {
     Thread.sleep(2000)
-    bank ! new AccountBalance("XYZ", 0)
-    bank ! new AccountBalance("ABC", 0)
+    bank ! new AccountBalance("XYZ", 0f)
+    bank ! new AccountBalance("ABC", 0f)
   }
 
 }

@@ -1,6 +1,5 @@
 package org.akka.essentials.supervisor.java.example1;
 
-
 import akka.actor.ActorRef;
 import akka.actor.UntypedActor;
 import akka.event.Logging;

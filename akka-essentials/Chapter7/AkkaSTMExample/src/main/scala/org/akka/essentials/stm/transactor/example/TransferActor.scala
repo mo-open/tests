@@ -1,5 +1,4 @@
 package org.akka.essentials.stm.transactor.example
-import scala.concurrent.stm.Ref
 
 import akka.actor.SupervisorStrategy._
 import akka.actor.Actor
@@ -7,7 +6,7 @@ import akka.actor.AllForOneStrategy
 import akka.actor.Props
 import akka.transactor.Coordinated
 import akka.transactor.CoordinatedTransactionException
-import akka.util.duration._
+import scala.concurrent.duration._
 import akka.util.Timeout
 
 class TransferActor extends Actor {

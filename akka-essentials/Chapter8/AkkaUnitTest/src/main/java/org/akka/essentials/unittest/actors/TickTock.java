@@ -1,5 +1,6 @@
 package org.akka.essentials.unittest.actors;
 
+import akka.actor.ActorRef;
 import akka.actor.UntypedActor;
 
 public class TickTock extends UntypedActor {
@@ -40,6 +41,6 @@ public class TickTock extends UntypedActor {
 
 	public void tick(Tick message) {
 		// do some processing here
-		sender().tell("processed the tick message");
+		sender().tell("processed the tick message", ActorRef.noSender());
 	}
 }
