@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns2:PlacementRequest version="1.1" system="vex" identity="VEX_28AB9D4D-9C5C-4E11-AC0A-D1995887E02F" messageId="feb163c1-6200-452a-ae14-28d1f7e34549" xmlns:ns15="http://www.comcast.com/schemas/NGOD/P1/2012/R1V0" xmlns:ns14="urn:cablelabs:md:xsd:title:3.0" xmlns:ns13="urn:cablelabs:md:xsd:terms:3.0" xmlns:ns12="urn:cablelabs:md:xsd:signaling:3.0" xmlns:ns11="urn:cablelabs:md:xsd:placementopportunity:3.0" xmlns:ns10="urn:cablelabs:md:xsd:content:3.0" xmlns:ns9="urn:cablelabs:md:xsd:offer:3.0" xmlns:ns8="urn:cablelabs:md:xsd:core:3.0" xmlns:ns7="http://www.thistech.com/schemas/1_0/opportunity" xmlns:ns6="http://www.tandbergtv.com/schemas/130-ext/2008a/ext" xmlns:ns5="http://www.scte.org/schemas/130-8/2010a/gis" xmlns:ns4="http://www.scte.org/schemas/130-3/2008a/adm/podm" xmlns:ns3="http://www.scte.org/schemas/130-2/2008a/core" xmlns:ns2="http://www.scte.org/schemas/130-3/2008a/adm">
+    <ns2:SystemContext>
+        <ns2:Channel>%s</ns2:Channel>
+        <ns2:Session>%s</ns2:Session>
+    </ns2:SystemContext>
+    <ns2:Entertainment>
+        <ns3:Content>
+            <ns3:AssetRef assetID="%s" providerID="%s"></ns3:AssetRef>
+        </ns3:Content>
+    </ns2:Entertainment>
+    <ns2:Client>
+        <ns3:CurrentDateTime>%s</ns3:CurrentDateTime>
+        <ns2:TerminalAddress type="DEVICEID">%s</ns2:TerminalAddress>
+    </ns2:Client>
+    <ns2:PlacementOpportunity serviceRegistrationRef="-" id="c16f5ea8-210a-4d83-9e7b-6a65468cf0e2">
+        <ns3:Ext>
+            <ns15:PlayPositionsAvailBinding>
+                <ns15:PlayPositionStart>
+                    <ns15:SignalId>%s</ns15:SignalId>
+                </ns15:PlayPositionStart>
+            </ns15:PlayPositionsAvailBinding>
+        </ns3:Ext>
+    </ns2:PlacementOpportunity>
+</ns2:PlacementRequest>

@@ -1,0 +1,39 @@
+metrics:
+    jvm:
+        memory: true
+        gc: true
+        threadState: true
+        threadDump: true
+        threadDeadlock: true
+        fileDescriptors: true
+
+servers:
+    ads:
+        port: 9090
+        enable: true
+        metrics: true
+    origin:
+        port: 9091
+        enable: true
+        responseFile: conf/playlist.m3u8
+        metrics: true
+    cacheMiss-callback:
+        port: 9092
+        enable: true
+        metrics: true
+    director:
+        port: 9093
+        enable: true
+        metrics: true
+    content-router:
+        port: 9094
+        enable: true
+        useLocation: true
+        metrics: true
+        edgeCaches:
+          - namePrefix: ec1
+            rangeFrom: 0
+            rangeTo: 10
+          - namePrefix: ec2
+            rangeFrom: 0
+            rangeTo: 10

@@ -1,0 +1,28 @@
+<ns2:PlacementStatusNotification messageId="fed6473a-9302-42c4-846f-a90e958b314a" identity="identity" xmlns:ns2="http://www.scte.org/schemas/130-3/2008a/adm" xmlns="http://www.scte.org/schemas/130-2/2008a/core">
+    <ns2:PlayData eventRangeStartDateTime="2014-02-26T06:46:39.840Z" eventRangeEndDateTime="2014-02-26T07:03:19.840Z">
+        <ns2:Client>
+            <CurrentDateTime>2014-02-26T06:46:39.840Z</CurrentDateTime>
+            <ns2:TerminalAddress/>
+        </ns2:Client>
+        <ns2:Events>
+            <ns2:PlacementStatusEvent type="startPlacement" time="2014-02-26T06:46:39.840Z" messageRef="resMessageId">
+                <ns2:Spot>
+                    <Tracking>placementTracing</Tracking>
+                    <Content id="placementContentName">
+                        <Duration>PT0H0M1S</Duration>
+                        <Tracking>placementTracing</Tracking>
+                    </Content>
+                </ns2:Spot>
+            </ns2:PlacementStatusEvent>
+            <ns2:PlacementStatusEvent type="endPlacement" time="2014-02-26T07:03:19.840Z" messageRef="resMessageId">
+                <ns2:Spot>
+                    <Tracking>placementTracing</Tracking>
+                    <Content id="placementContentName">
+                        <Duration>PT0H0M1S</Duration>
+                        <Tracking>placementTracing</Tracking>
+                    </Content>
+                </ns2:Spot>
+            </ns2:PlacementStatusEvent>
+        </ns2:Events>
+    </ns2:PlayData>
+</ns2:PlacementStatusNotification>
