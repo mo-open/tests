@@ -1,7 +1,5 @@
 package org.akka.essentials.stm.pingpong.example3
 
-import scala.concurrent.stm.Ref
-import scala.concurrent.ops._
 import akka.actor.ActorSystem
 import akka.agent.Agent
 
@@ -10,7 +8,7 @@ object Game {
   def main(args: Array[String]): Unit = {
 
     val _system = ActorSystem("Agent-example")
-    val turn = Agent(new String)(_system)
+    val turn = Agent(new String)(_system.dispatcher)
     val table = new PingPong(turn)
 
     val alice = new Thread(new Player("bob", table))

@@ -3,15 +3,14 @@ import akka.actor.actorRef2Scala
 import akka.actor.Actor
 import akka.actor.ActorLogging
 import akka.actor.Cancellable
-import akka.util.duration.intToDurationInt
 import akka.zeromq.Bind
-import akka.zeromq.Frame
 import akka.zeromq.Listener
 import akka.zeromq.SocketType
 import akka.zeromq.ZMQMessage
 import akka.zeromq.ZeroMQExtension
+import scala.concurrent.duration._
 
-case class Tick
+case class Tick()
 
 class PushActor extends Actor with ActorLogging {
 	val pushSocket = ZeroMQExtension(context.system).newSocket(SocketType.Push, Bind("tcp://127.0.0.1:1234"), Listener(self))
@@ -25,8 +24,8 @@ class PushActor extends Actor with ActorLogging {
 	def receive: Receive = {
 		case Tick =>
 			count += 1
-			var payload = "Hi there! (" + count + ")"
-			pushSocket ! ZMQMessage(Seq(Frame(payload)))
+			val payload = "Hi there! (" + count + ")"
+			pushSocket ! ZMQMessage(payload))
 			if (count == 5) {
 				cancellable.cancel()
 			}

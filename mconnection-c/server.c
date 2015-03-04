@@ -4,13 +4,6 @@ compile:
 run:
    ./server -p 8000
 
-intall dependency:
-   wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz
-   tar xvf libevent-2.0.21-stable.tar.gz
-   cd libevent-2.0.21-stable
-   ./configure --prefix=/usr
-   make
-   make install
 **/
 
 #include <arpa/inet.h>

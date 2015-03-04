@@ -10,6 +10,6 @@ public class ForwardingActor extends UntypedActor {
 	}
 	@Override
 	public void onReceive(Object message) throws Exception {
-		next.tell(message);
+		next.tell(message,ActorRef.noSender());
 	}
 }

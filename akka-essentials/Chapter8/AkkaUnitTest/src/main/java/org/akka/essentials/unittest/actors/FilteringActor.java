@@ -13,6 +13,6 @@ public class FilteringActor extends UntypedActor {
 	@Override
 	public void onReceive(Object message) throws Exception {
 		if (message instanceof String)
-			next.tell(message);
+			next.tell(message,ActorRef.noSender());
 	}
 }
