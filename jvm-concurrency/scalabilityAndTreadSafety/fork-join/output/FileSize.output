@@ -1,0 +1,7 @@
+>java com.agiledeveloper.pcj.FileSize /etc
+Total Size: 2266456
+Time taken: 0.038218
+
+>java com.agiledeveloper.pcj.FileSize /usr
+Total Size: 3793911517
+Time taken: 8.35158

@@ -1,0 +1,10 @@
+Balance1 is 100
+Ready to deposit... 20
+simulating delay in deposit...
+Ready to withdraw... 10
+simulating delay in withdraw...
+done with deposit of 20
+Ready to withdraw... 10
+simulating delay in withdraw...
+done with withdraw of 10
+Balance1 now is 110

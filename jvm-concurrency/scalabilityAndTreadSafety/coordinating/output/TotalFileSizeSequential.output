@@ -1,0 +1,7 @@
+>java TotalFileSizeSequential /etc
+Total Size: 2266456
+Time taken: 0.011836
+
+>java TotalFileSizeSequential /usr
+Total Size: 3793911517
+Time taken: 18.570144

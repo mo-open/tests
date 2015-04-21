@@ -1,0 +1,16 @@
+Received Deposit request 1000
+Received Deposit request 1000
+Account1 balance is 1000
+Account2 balance is 1000
+Let's transfer $20... should succeed
+Received Deposit request 20
+Received Withdraw request 20
+Account1 balance is 980
+Account2 balance is 1020
+Let's transfer $2000... should not succeed
+Received Deposit request 2000
+Received Withdraw request 2000
+...insufficient funds...
+Account1 balance is 980
+Account2 balance is 1020
+

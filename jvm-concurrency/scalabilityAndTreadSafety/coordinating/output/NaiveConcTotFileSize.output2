@@ -1,0 +1,11 @@
+>java NaivelyConcurrentTotalFileSize /usr
+Exception in thread "main" java.util.concurrent.TimeoutException
+	at java.util.concurrent.FutureTask$Sync.innerGet(FutureTask.java:228)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:91)
+	at NaivelyConcurrentTotalFileSize.getTotalSizeOfFilesInDir(
+          NaivelyConcurrentTotalFileSize.java:34)
+	at NaivelyConcurrentTotalFileSize.getTotalSizeOfFile(
+          NaivelyConcurrentTotalFileSize.java:45)
+	at NaivelyConcurrentTotalFileSize.main(
+          NaivelyConcurrentTotalFileSize.java:54)
+

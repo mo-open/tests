@@ -1,0 +1,4 @@
+Balance is 0
+Exception in thread "main" 
+  java.lang.IllegalStateException: No transaction running (mutate.clj:0)
+...

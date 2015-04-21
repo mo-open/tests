@@ -1,0 +1,5 @@
+Read only
+Attempt to write
+Failed org.multiverse.api.exceptions.ReadonlyException: 
+Can't open for write transactional object 'akka.stm.Ref@1761506447' 
+because transaction 'DefaultTransaction' is readonly'

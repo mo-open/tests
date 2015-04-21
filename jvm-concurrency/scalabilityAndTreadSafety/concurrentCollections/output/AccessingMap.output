@@ -1,0 +1,12 @@
+Using Plain vanilla HashMap
+Sara score 12
+Failed: java.util.ConcurrentModificationException
+Number of elements in the map: 3
+Using Synchronized HashMap
+Sara score 12
+Failed: java.util.ConcurrentModificationException
+Number of elements in the map: 3
+Using Concurrent HashMap
+Sara score 12
+Fred score 10
+Number of elements in the map: 3

@@ -1,0 +1,3 @@
+>java ConcurrentTotalFileSizeWLatch /usr
+Total Size: 3793911517
+Time taken: 10.22789

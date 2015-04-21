@@ -1,0 +1,9 @@
+Total file size for /etc
+Total Size: 2266408
+Time taken: 0.537082
+
+Total file size for /usr
+Too many retries on transaction 'DefaultTransaction', maxRetries = 1000
+Too many retries on transaction 'DefaultTransaction', maxRetries = 1000
+Too many retries on transaction 'DefaultTransaction', maxRetries = 1000
+...

@@ -1,0 +1,8 @@
+deposit 500... will it stay
+deposit 500... will it stay
+Balance of from account is 1500
+Balance of to account is  600
+deposit 5000... will it stay
+transfer failed java.lang.RuntimeException: Operation invalid
+Balance of from account is 1500
+Balance of to account is  600

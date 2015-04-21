@@ -1,0 +1,10 @@
+public void transfer(
+  final Account from, final Account to, final int amount) {
+  new Atomic<Boolean>() {
+     public Boolean atomically() {
+       to.deposit(amount);
+       from.withdraw(amount);
+       return true;
+     }
+  }.execute();
+}

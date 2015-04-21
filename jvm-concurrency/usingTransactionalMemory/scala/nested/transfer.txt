@@ -1,0 +1,6 @@
+def transfer(from : Account, to : Account, amount : Int) = {
+  atomic {
+    to.deposit(amount)
+    from.withdraw(amount)
+  }
+}

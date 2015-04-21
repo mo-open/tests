@@ -1,0 +1,11 @@
+Thread in main: main
+Energy units 100
+Firing two requests for use energy
+Fired two requests for use energy
+Thread in useEnergy: akka:event-driven:dispatcher:global-2
+Thread in useEnergy: akka:event-driven:dispatcher:global-2
+Firing one more requests for use energy
+Thread in useEnergy: akka:event-driven:dispatcher:global-3
+Thread in replenish: akka:event-driven:dispatcher:global-4
+Energy units 71
+Usage 3
