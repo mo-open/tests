@@ -3,7 +3,7 @@ package akka.first.app.java;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
-import akka.first.app.java.actors.MasterActor;
+import akka.first.app.scala.actors.MasterActor;
 import akka.first.app.java.messages.Result;
 
 public class MapReduceApplication {

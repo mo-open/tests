@@ -13,7 +13,7 @@ class SupervisorActor extends Actor with ActorLogging {
 
   override def preStart() {
     monitor ! new RegisterWorker(childActor, self)
-  }
+}
 
   override val supervisorStrategy = OneForOneStrategy(maxNrOfRetries = 10, withinTimeRange = 10 seconds) {
 

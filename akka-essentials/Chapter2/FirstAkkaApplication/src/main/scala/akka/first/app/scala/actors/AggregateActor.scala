@@ -7,6 +7,7 @@ import scala.collection.JavaConversions.asScalaSet
 import akka.actor.Actor
 import akka.first.app.scala.ReduceData
 import akka.first.app.scala.Result
+import akka.first.app.java.messages.{Result => JavaResult}
 
 class AggregateActor extends Actor {
 
@@ -16,6 +17,8 @@ class AggregateActor extends Actor {
         case message: ReduceData =>
             aggregateInMemoryReduce(message.reduceDataMap)
         case message: Result =>
+            System.out.println(finalReducedMap.toString())
+        case message: JavaResult =>
             System.out.println(finalReducedMap.toString())
     }
 

@@ -5,6 +5,7 @@ import akka.actor.Actor
 import akka.actor.ActorRef
 import akka.actor.Props
 import akka.first.app.scala.Result
+import akka.first.app.java.messages.{Result => JavaResult}
 
 class MasterActor extends Actor {
 
@@ -16,6 +17,8 @@ class MasterActor extends Actor {
         case message: String =>
             mapActor ! message
         case message: Result =>
+            aggregateActor ! message
+        case message: JavaResult =>
             aggregateActor ! message
         case _ =>
     }
